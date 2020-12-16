@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MomsWhatsAppBot", "MomsWhatsAppBot\MomsWhatsAppBot.csproj", "{F1651B66-5E10-48DD-9093-7EB2AFB91D29}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BotTests", "BotTests\BotTests.csproj", "{C552A533-B819-4141-A2B4-154AB981E4EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3FEE2007-0964-443E-BFAC-E00C96BA742B}"
+	ProjectSection(SolutionItems) = preProject
+		.gitlab-ci.yml = .gitlab-ci.yml
+		azure-pipelines.yml = azure-pipelines.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1651B66-5E10-48DD-9093-7EB2AFB91D29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1651B66-5E10-48DD-9093-7EB2AFB91D29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1651B66-5E10-48DD-9093-7EB2AFB91D29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1651B66-5E10-48DD-9093-7EB2AFB91D29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C552A533-B819-4141-A2B4-154AB981E4EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C552A533-B819-4141-A2B4-154AB981E4EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C552A533-B819-4141-A2B4-154AB981E4EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C552A533-B819-4141-A2B4-154AB981E4EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24EB0517-EF0C-4EDF-A390-6241D58B9FC7}
+	EndGlobalSection
+EndGlobal

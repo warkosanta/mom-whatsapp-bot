@@ -1,0 +1,11 @@
+{
+  "YouTubeSettings": {
+    "Key": "AIzaSyDHGxJVir1BPRDOzfCZzH1drR5PsjAOXmo"
+  },
+
+  "MongoDBSettings": {
+    "UserSettingsCollectionName": "UsersSetting",
+    "ConnectionString": "mongodb+srv://warkosanta:hiveswap3105@cluster0-mrigh.azure.mongodb.net/MomsBotDB?retryWrites=true&w=majority", //"mongodb://host.docker.internal:27017",
+    "DatabaseName": "MomsBotDB"
+  }
+}
