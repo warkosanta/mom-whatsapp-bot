@@ -17,10 +17,11 @@ namespace TwilioReceive.Controllers
 {
     public class SmsController : TwilioController
     {
-        private readonly YTVideoService videoService;
-        private readonly UserSettingsService userSettings;
+        private readonly IYTVideoService videoService;
+        private readonly IUserSettingsService userSettings;
 
-        public SmsController(YTVideoService videoService, UserSettingsService userSettings)
+        public SmsController(IYTVideoService videoService,
+            IUserSettingsService userSettings)
         {
             this.videoService = videoService;
             this.userSettings = userSettings;
@@ -30,17 +31,24 @@ namespace TwilioReceive.Controllers
         {
             var messagingResponse = new MessagingResponse();
 
-            if (request.Body is null && request.From is null)  return TwiML(messagingResponse.Message("Body or sender of request is unknown."));
+            if (request.Body is null && request.From is null)  
+                return TwiML(messagingResponse.Message("Body or sender of request is unknown."));
+
             var command = request.Body.ToLower();
 
             var results = await userSettings.GetAsync(Regex.Replace(request.From, "[^0-9.-]", ""));
 
             if (!results.Any())
             {
-                return TwiML(messagingResponse.Message("Ваш номер отсутсвует в базе данных."));
+                return TwiML(messagingResponse.Message("Your number is missing from the database."));
             }
 
             var settings = results.First();
+            if (settings.buttons == null)
+            {
+                messagingResponse.Message(settings.greatingMessage);
+                return TwiML(messagingResponse);
+            }
             if (!settings.buttons.ContainsKey(command))
             {
                 messagingResponse.Message(settings.greatingMessage);

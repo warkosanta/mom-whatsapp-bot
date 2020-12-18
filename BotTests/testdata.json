@@ -1,11 +1,38 @@
 {
-  "YouTubeSettings": {
-    "Key": "AIzaSyDHGxJVir1BPRDOzfCZzH1drR5PsjAOXmo"
-  },
-
-  "MongoDBSettings": {
-    "UserSettingsCollectionName": "UsersSetting",
-    "ConnectionString": "mongodb+srv://warkosanta:hiveswap3105@cluster0-mrigh.azure.mongodb.net/MomsBotDB?retryWrites=true&w=majority", //"mongodb://host.docker.internal:27017",
-    "DatabaseName": "MomsBotDB"
-  }
+  "InvalidSmsRequests": [
+    [
+      {
+        "SmsRequest": {
+          "body": null,
+          "messageStatus": null
+        },
+        "ResponseMessage": "Body or sender of request is unknown."
+      }
+    ],
+    [
+      {
+        "SmsRequest": {
+          "body": "null",
+          "messageStatus": "null",
+          "from": "0000"
+        },
+        "ResponseMessage": "Your number is missing from the database."
+      }
+    ]
+  ],
+  "ValidSmsRequests": [
+    [
+      {
+        "SmsRequest": {
+          "body": "null",
+          "messageStatus": "null",
+          "from": "9999"
+        },
+        "ResponseMessage": "Test greating message",
+        "UserSettings": {
+          "greatingMessage": "Test greating message"
+        }
+      }
+    ]
+  ]
 }

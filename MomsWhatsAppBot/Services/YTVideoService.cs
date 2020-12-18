@@ -12,7 +12,11 @@ using System.Threading.Tasks;
 
 namespace MomsWhatsAppBot.Services
 {
-    public class YTVideoService
+    public interface IYTVideoService
+    {
+        Task<IEnumerable<string>> GetVideosAsync(WhatsAppCommand searchParams);
+    }
+    public class YTVideoService : IYTVideoService
     {
         private static YouTubeService service;
         private readonly Dictionary<VideoMode,
@@ -24,7 +28,7 @@ namespace MomsWhatsAppBot.Services
                [VideoMode.EachFresh] = GetEachFreshVideos,
                [VideoMode.EachRandom] = GetEachRandomVideos
             };
-
+        public YTVideoService(){}
         public YTVideoService(IOptions<YouTubeSettings> youTubeSettings)
         {
             service = new YouTubeService(new BaseClientService.Initializer()

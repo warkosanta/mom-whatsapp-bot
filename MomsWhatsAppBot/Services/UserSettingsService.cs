@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace MomsWhatsAppBot.Services
 {
-    public class UserSettingsService
+    public class UserSettingsService: IUserSettingsService
     {
         private readonly IMongoCollection<UserSettings> userSettings;
-
+        public UserSettingsService(){}
         public UserSettingsService(IOptions<MongoDBSettings> settings)
         {
             var client = new MongoClient(settings.Value.ConnectionString);
@@ -30,5 +30,10 @@ namespace MomsWhatsAppBot.Services
         {
             await userSettings.InsertOneAsync(settings);
         }
+    }
+
+    public interface IUserSettingsService
+    {
+        Task<List<UserSettings>> GetAsync(string mobilePhone);
     }
 }
