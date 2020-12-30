@@ -19,7 +19,7 @@ namespace BotTests
         {
             // Arrange
             var options = Options.Create(new YouTubeSettings() 
-            { Key = "AIzaSyASq70Pv2YFRmlt8NLWaiDqK1OSfK0FaCo" });
+            { Key = "AIzaSyC6bknsEUudzRcx0Yl5cCkpa3guk3Khu1I" });
             var videoService = new YTVideoService(options);
 
             var command = new WhatsAppCommand()
@@ -41,7 +41,7 @@ namespace BotTests
         {
             // Arrange
             var options = Options.Create(new YouTubeSettings()
-            { Key = "AIzaSyASq70Pv2YFRmlt8NLWaiDqK1OSfK0FaCo" });
+            { Key = "AIzaSyC6bknsEUudzRcx0Yl5cCkpa3guk3Khu1I" });
             var videoService = new YTVideoService(options);
 
             var invalidCommand = new WhatsAppCommand();
